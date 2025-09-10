@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen API Demo</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <h1>Imagen Image Generation</h1>
+    <p id="prompt-display"></p>
+    <div class="controls-container">
+        <label for="aspect-ratio-select">Aspect Ratio:</label>
+        <select id="aspect-ratio-select" aria-label="Select image aspect ratio">
+            <option value="1:1" selected>1:1 (Square)</option>
+            <option value="3:4">3:4 (Portrait)</option>
+            <option value="4:3">4:3 (Landscape)</option>
+            <option value="16:9">16:9 (Widescreen)</option>
+            <option value="9:16">9:16 (Tall)</option>
+        </select>
+        <label for="style-select">Artistic Style:</label>
+        <select id="style-select" aria-label="Select image artistic style">
+            <option value="default" selected>Default</option>
+            <option value="photorealistic">Photorealistic</option>
+            <option value="cartoon">Cartoon</option>
+            <option value="abstract">Abstract</option>
+        </select>
+        <label for="quality-select">Quality:</label>
+        <select id="quality-select" aria-label="Select image quality">
+            <option value="standard" selected>Standard</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+    <div id="image-gallery">
+        <div class="loader"></div>
+    </div>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
